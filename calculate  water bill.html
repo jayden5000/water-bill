@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Water Bill Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .calculator img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <img src="D:\Y1S1\c++\logo.jpg" alt="Logo">
+    <h2>Water Bill Calculator</h2>
+    <label for="kiloInput">Water used (kiloliters):</label>
+    <input type="number" id="kiloInput" placeholder="e.g., 5">
+    <button onclick="calculateBill()">Calculate</button>
+    <p id="result"></p> 
+    <img src="C:\Users\jden5\Downloads\team.jpg" alt="team"> <img src="C:\Users\jden5\Downloads\group.jpg"alt="group">
+    <h3 style="border: 5px solid #007bff; padding: 15px; border-radius: 25px;">
+        Ny Nan <br> Ny Chanda <br> Eng Seanghour <br> Jun Ratana <br> Sarin Sothearith
+      </h3>
+  </div>
+
+  <script>
+    function calculateBill() {
+      const pricePerKilo = 3000;
+      const kilo = parseFloat(document.getElementById("kiloInput").value);
+      const result = document.getElementById("result");
+
+      if (isNaN(kilo) || kilo < 0) {
+        result.textContent = "Please enter a valid number!";
+      } else {
+        const total = kilo * pricePerKilo;
+        result.textContent = `You need to pay: ${total.toLocaleString()} Riels`;
+      }
+    }
+  </script>
+</body>
+</html>
